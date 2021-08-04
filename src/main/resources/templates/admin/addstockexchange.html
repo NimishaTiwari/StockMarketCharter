@@ -1,0 +1,105 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/basestockexchange::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Admin-Add Stock Exchange</title>
+
+</head>
+
+<body>
+	<section class="sbanner">
+		<div class="card mt-5" style="width:50%;background-color: transparent; margin-left:30%">
+		<div class="card-body">
+		
+		<h1 class="text-center text-white"><i class="fas fa-building fa-fw"></i><b>  Add Stock Exchange</b></h1>
+		<div class="container-fluild mt-1">
+		
+		<div class="row">
+		<div class="col-md-10 offset-md-1">
+
+		<form action="#" th:action="@{/admin/process-stockexchange}" th:method="post" th:object="${stockexchange}" 
+		 class="mt-2">
+		 
+			<div th:if="${session.message}"
+						th:classappend="${session.message.type}" class="alert mt-2 p-2"
+						role="alert">
+						<p class="text-center" th:text="${session.message.content}"></p>
+						<th:block th:text="${#session.removeAttribute('message')}">
+						</th:block>
+			</div>
+					
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text mr-3">
+					<i class="fa fa-plus fa-fw" style="font-size: 30px;"></i>
+					</div>
+					
+				</div>
+				<input type="text" name="stockExchange" placeholder="Enter Stock Exchange Name" class="form-control" required="required"/>
+			</div>
+			
+			<div class="input-group mt-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text mr-3">
+						<i class="fas fa-address-book fa-fw" style="font-size: 30px;"></i>
+					</div>
+				</div>
+				<input type="text" name="contactAddress" placeholder="Enter Contact Address" class="form-control" required/>
+			</div>
+			 
+				
+			
+			<div class="form-group mt-3">
+			<div class="input-group mt-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text mr-3">
+							<i class="fas fa-file-word fa-fw" style="font-size: 30px;"></i>
+					</div>
+					</div>
+				<textarea id="mytextarea" name="remarks" class="form-control" rows="5" placeholder="Enter Remarks" required>
+				</textarea>
+			</div>
+			</div>
+			
+			<div class="form-group mt-3">
+			<div class="input-group mt-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text mr-3">
+							<i class="fas fa-quote-left fa-fw" style="font-size: 30px;"></i>
+					</div>
+					
+					</div>
+				<textarea id="mytextarea2" name="SEBrief" class="form-control" rows="10" placeholder="Enter Stock Exchange description" required>
+				
+				</textarea>
+				
+			</div>
+			</div>
+			
+			<div class="container text-center mt-2">
+			<button class="btn bg-primary text-white" type="submit">Save Exchange info</button></div>
+		</form>
+		</div>
+		
+		</div>
+		</div>
+		
+		</div>
+		</div>
+		
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		 <script>
+		      tinymce.init({
+		        selector: '#mytextarea'
+		      });
+    		</script>
+    		<script>
+		      tinymce.init({
+		        selector: '#mytextarea2'
+		      });
+    		</script>
+    		
+	</section>	
+</body>
+</html>
+

@@ -1,0 +1,142 @@
+
+body {
+	background: white !important;
+	font-family: Comic Sans MS, Comic Sans, cursive
+}
+
+.bg-primary {
+	background:#6d4c41 !important;
+}
+.homebanner
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
+		url(../image/image19.jpeg);
+	color: white;
+	background-size: cover;
+
+}
+
+.banner
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
+		url(../image/image19.jpeg);
+	color:black;
+	background-size: cover;
+
+}
+.sbanner
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
+		url(../image/image20.jpeg);
+	color:black;
+	background-size: cover;
+
+}
+.ibanner
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
+		url(../image/image1.jpg);
+	color:black;
+	background-size: cover;
+
+}
+.ubanner
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
+		url(../image/image7.jpeg);
+	color:black;
+	background-size: cover;
+}
+.sidebar
+{
+	width: 18%;
+	background: linear-gradient(rgba(255,255, 255, .9),rgba(255,255, 255, .9));
+	height: 100vh;
+	position: fixed;
+	padding-top: 45px;
+}
+
+@media only screen and(max-width: 600px){
+	.sidebar
+{
+	display: none;
+	width: 80% !important;
+	background: white;
+	height: 100vh;
+	position: fixed;
+	padding-top: 20pxpx;
+}
+
+}
+.sidebar a{
+	display: block;
+	width: 100%;
+	padding: 20px 25px;
+	text-decoration: none;
+	font-weight:bolder;
+	color: #6d4c41;
+}
+
+.sidebar a:hover
+{
+	background: #d7ccc8 ;
+}
+.sidebar .divider
+{
+	height: 1px;
+	width: 100%;
+	background:#6d4c41 ;
+	margin-top:10px  ;
+}
+.crossBtn
+{
+	position:absolute;
+	top:0;
+	right:35px;
+	font-size: 36px;
+	cursor:pointer;
+}
+#ic
+{
+	font-size:35px;
+	color: white;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+.login-or {
+	position: relative;
+	color: #aaa;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.span-or {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -2px;
+	margin-left: -25px;
+	background-color: #fff;
+	width: 50px;
+	text-align: center;
+}
+
+.hr-or {
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}

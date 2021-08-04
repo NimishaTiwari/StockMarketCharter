@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>USER -View Company</title>
+</head>
+
+<body>
+<section class="banner">
+	<div class="card mt-5" style="background-color: transparent; margin-left:20%">
+		<div class="card-body">
+		
+		<h1 class="text-center text-white"><i class="fas fa-building fa-fw"></i><b> Company Details</b></h1>
+		<div class="container mt-1" style="background: white; color: black">
+			<h3 class="text-center " th:text="${company.companyName}" style="font-weight: bolder;"></h3>
+			
+				<table class="table">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">ID</th>
+					      <th scope="col" th:text="${company.companyId}"></th>
+					    </tr>
+					  </thead>
+					  
+					  <tbody>
+					    <tr>
+					      <th scope="row">Turnover</th>
+					      <td><span th:text="${company.turnover}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row">Chief Executive Officer</th>
+					      <td><span th:text="${company.CEO}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row">Board of Director</th>
+					      <td><span th:text="${company.BOD}"></span></td>
+					    </tr>
+					    <tr>
+					  </tbody>
+					</table>
+					<div class="Description"><h3>Description</h3>
+					<th:block th:utext="${company.writeUp}"> 		
+					</th:block>
+					</div>
+					<h3>Sector Name: <span th:text="${sector.sectorName}"></span></h3>
+					<div class="Description"><h3>Sector Brief</h3>
+					<th:block th:utext="${sector.sectorBrief}"> 		
+					</th:block>
+					</div>
+					<br>
+		</div>
+	</div>
+	</div>
+</section>
+</body>
+</html>
