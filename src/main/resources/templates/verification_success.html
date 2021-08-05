@@ -1,0 +1,48 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Verification Successfull</title>
+</head>
+<body>
+	<section class="emailimage" >
+		<div class="row">
+			<div class="col-md-4 offset-md-4 mt-5">
+			<br>
+			<br>
+			<br>
+			<br>
+				<div class="card">
+					<div class="text-center mt-3">
+						<h4 class="text-uppercase font-bold m-b-0" style="color: #6d4c41"><em><b>Welcome back..!!</b></em></h4>
+					</div>
+					<br>
+					<div class="image text-center">
+						<img class="icon" th:src="@{/image/man.png}" src="" alt="" />
+					</div>
+					<br>
+					<div class="container text-center">
+						<p>
+							 Dear user,Thanks for verifying your email....!!!
+						</p>
+					</div>
+					<div class="text-center">
+									<div class="login-or">
+										<hr class="hr-or">
+										<span class="span-or"></span>
+									</div>
+								</div>
+								
+					<div class="text-center">
+						<button class=" btn btn-block mybtn bg-primary text-white tx-tfm" onclick="window.location.href='login'">Login</button>
+					</div>
+					<br>
+					<div><br></div>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

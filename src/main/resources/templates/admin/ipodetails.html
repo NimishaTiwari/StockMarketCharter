@@ -1,0 +1,77 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/baseipo::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Admin-View IPO</title>
+</head>
+
+<body>
+<section class="ibanner">
+	<div class="card mt-5" style="background-color: transparent; margin-left:20%">
+		<div class="card-body">
+		
+		<h1 class="text-center text-white"><i class="fas fa-th-list"></i><b> IPO Details</b></h1>
+		<div class="container mt-1" style="background: white; color: black">
+			<h3 class="text-center " th:text="${company.companyName}" style="font-weight: bolder;"></h3>
+			<div style="margin-left: 90%">
+			
+				       <form th:action="@{'/admin/updateipo/'+${ipo.ipoId}}" th:method="post">
+				       	<button class="btn btn-success" type="submit"><i class="fas fa-edit"></i> Edit</button>
+				       </form>
+						<a href="#" th:onclick="|deleteipo(${ipo.ipoId})|" class="btn btn-danger mt-2 "><i class="fas fa-trash"></i> Delete</a>
+						
+			</div>
+			
+				<table class="table">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">ID</th>
+					      <th scope="col" th:text="${ipo.ipoId}"></th>
+					    </tr>
+					  </thead>
+					  
+					  <tbody>
+					    <tr>
+					      <th scope="row">Price per Share</th>
+					      <td><span th:text="${ipo.pricePerShare}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row">Total no. of Shares</th>
+					      <td><span th:text="${ipo.totalNoOfShares}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row">Opening Date</th>
+					      <td><span th:text="${ipo.openDateTime}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row">Company Turnover</th>
+					      <td><span th:text="${company.turnover}"></span></td>
+					    </tr>
+					    <tr>
+					      <th scope="row">Stock Exchange</th>
+					      <td><span th:text="${stockExchange.stockExchange}"></span></td>
+					    </tr>
+					    
+					     <tr>
+					      <th scope="row">Company Sector</th>
+					      <td><span th:text="${company.sector.sectorName}"></span></td>
+					    </tr>
+					    
+					    <tr>
+					      <th scope="row">Company CEO</th>
+					      <td><span th:text="${company.CEO}"></span></td>
+					    </tr>
+					  </tbody>
+					</table>
+					<div class="Remarks"><h3>Description</h3>
+					<th:block th:utext="${ipo.remarks}"> 		
+					</th:block>
+					</div>
+				
+				<br>
+		</div>
+	</div>
+	</div>
+</section>
+</body>
+</html>

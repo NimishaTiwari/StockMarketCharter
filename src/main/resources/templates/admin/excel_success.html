@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Admin- Excel Added</title>
+</head>
+
+<body>
+<section class="ibanner">
+	<div class="card mt-5" style="background-color: transparent; margin-left:20%">
+		<div class="card-body">
+		
+		<h1 class="text-center text-white"><i class="fas fa-th-list"></i><b> Excel Details</b></h1>
+		<div class="container mt-1" style="background: white; color: black">
+			<h3 class="text-center " th:text="${company.companyName}" style="font-weight: bolder;"></h3>
+						<div>
+						<h3>Company ID: <span  th:text="${company.companyId}"></span></h3>
+						<h3>No of Records Imported: <span  th:text="${rows}"></span></h3>
+						<h3>Opening Date: <span  th:text="${sprice.Date}"></span></h3>
+						<h3>Opening Time: <span  th:text="${sprice.Time}"></span></h3>
+						<h3>Company Sector: <span  th:text="${company.sector.sectorName}"></span></h3>
+						<br>
+						<br>
+						<div class="text-center">
+						<button class=" btn btn-warning text-white tx-tfm" onclick="window.location.href='admin/dashboard'">OK</button>
+					</div>
+						</div>		
+				
+				<br>
+		</div>
+	</div>
+	</div>
+</section>
+</body>
+</html>

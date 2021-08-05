@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Admin Import Excel</title>
+</head>
+
+<body>
+	<section  class="ibanner mt-5">
+	<div class="card " style="background-color: transparent; margin-left:20%; padding-top: 5%">
+		<div class="card-body">
+		
+		<h1 class="text-center text-white"><i class="fas fa-th-list"></i><b> Import Excel to Update Stock Price</b></h1>
+		<div class="container mt-5" style="background: #d7ccc8; color: black;width: 50%; padding: 5%">
+			
+		 <form action="#" th:action="@{/admin/process-excel}" th:method="post" enctype="multipart/form-data">
+		 
+			<div th:if="${session.message}"
+						th:classappend="${session.message.type}" class="alert mt-2 p-2"
+						role="alert">
+						<p class="text-center" th:text="${session.message.content}"></p>
+						<th:block th:text="${#session.removeAttribute('message')}">
+						</th:block>
+			</div>
+					
+		 <label for="files" class="btn"><h1><b><i>Select an Excel file</i></b></h1></label>
+		 <input type="file" name="file" ID="fileSelect" accept=".xlsx, .xls, .csv"/>
+		 		<br>
+		 		<br>
+		 		<a href="" th:href="@{/samplefile/sample_stock_data.xlsx}" >Click here to download the sample excel sheet</a>
+		 		<br>
+		 		<br>
+		 <button class="btn btn-success" type="submit"><i class="fas fa-file-upload"></i> Upload</button>
+		 <button class="btn btn-warning" type="reset"><i class="fas fa-redo"></i> Reset</button>
+		 
+		 </form>
+	    </div>
+	    </div>
+	    </div>
+	</section>
+</body>
+</html>

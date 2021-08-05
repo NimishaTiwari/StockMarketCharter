@@ -1,0 +1,83 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>USER -View IPO</title>
+</head>
+
+<body>
+	<section class="ibanner">
+		<div class="card mt-5" style="background-color: transparent; margin-left:19%">
+		<div class="card-body">
+		
+		<h1 class="text-center text-white mt-2"><i class="fas fa-building fa-fw"></i><b>  List of Ipos</b></h1>
+			
+			<div class="mt-3" style="background: white">
+					
+				<table class="table table-striped">
+				 <thead class="thead-dark" style="background: black; color: white">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Price Per Share</th>
+				      <th scope="col">Total No of Shares</th>
+				      <th scope="col">Opening Date</th>
+				       <th scope="col">Company  Name</th>
+				       <th scope="col">Stock Exchange  Name</th>
+				       
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr th:each="c: ${ipolist}">
+				      <th scope="row" th:text="${'SCM'+c.ipoId}"></th>
+				      
+				      <td th:text="${c.pricePerShare}"></td>
+				      <td th:text="${c.totalNoOfShares}"></td>
+				      <td th:text="${c.openDateTime}"></td>
+				      <td >
+				      <a href="" th:href="@{'/user/ipo/'+ ${c.ipoId}}">
+				      <span th:text="${c.company.companyName}"></span>
+				      </a>
+				      </td>
+				      <td><span th:text="${c.StockExchange.stockExchange}"></span></td>
+				      
+				      
+				    </tr>
+
+				  </tbody>
+				</table>
+				<nav aria-label="Page navigation example" style="margin-bottom: 5%">
+				
+				  <ul class="pagination">
+				  
+				    <li th:if="${currentpage!=0}"  class="page-item">
+				    
+				      <a th:href="@{'/user/viewipo/'+ ${currentpage-1}}"class="page-link" href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				        <span class="sr-only">Previous</span>
+				      </a>
+				      
+				    </li>
+				    
+				    <li th:classappend="${currentpage==i-1?'active':''}" th:each="i: ${#numbers.sequence(1,totalpages)}" class="page-item"><a th:href="@{'/user/viewipo/'+ ${i-1}}" class="page-link" href="#"><span th:text="${i}"></span></a></li>
+				    				   
+				    <li th:if="${currentpage+1 != totalpages}" class="page-item">
+				    
+				      <a th:href="@{'/user/viewipo/'+ ${currentpage+1}}" class="page-link" href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				        <span class="sr-only">Next</span>
+				      </a>
+				      
+				    </li>
+				    
+				  </ul>
+				  <br>
+				</nav>
+							
+				
+			</div>
+		</div>
+		</div>
+		
+	</section>
+</body>
+</html>
